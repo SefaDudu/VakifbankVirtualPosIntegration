@@ -1,0 +1,34 @@
+﻿@model PaymentModel
+
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Payment</h2>
+
+@using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
+{
+    <div>
+        <label>Merchant ID</label>
+        @Html.TextBoxFor(m => m.MerchantId)
+    </div>
+    <div>
+        <label>Merchant Password</label>
+        @Html.PasswordFor(m => m.MerchantPassword)
+    </div>
+    <div>
+        <label>Terminal ID</label>
+        @Html.TextBoxFor(m => m.TerminalId)
+    </div>
+    <div>
+        <label>Order ID</label>
+        @Html.TextBoxFor(m => m.OrderId)
+    </div>
+    <div>
+        <label>Amount</label>
+        @Html.TextBoxFor(m => m.Amount)
+    </div>
+    <div>
+        <input type="submit" value="Pay" />
+    </div>
+}
